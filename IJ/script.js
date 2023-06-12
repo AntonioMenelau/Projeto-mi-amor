@@ -1,4 +1,4 @@
 function continuar() {
     alert("Teste iniciado!");
-    window.location.href = "../lvl1/index.html";
+    window.location.href = "../1/index.html";
 }

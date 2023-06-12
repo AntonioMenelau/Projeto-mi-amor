@@ -11,44 +11,17 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
   }
 
   h1 {
-    text-align: center;
     color: #E31B6D;
     font-family: 'Arial', sans-serif;
     margin-bottom: 20px;
   }
 
-  h2 {
-    text-align: center;
-    color: #000000;
-    font-family: 'Arial', sans-serif;
-    margin-bottom: 20px;
-  }
-
-  .input-cont {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .botao-cont {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 0 auto;
-    border-radius: 5px;
-    border: 1px solid #CCC;
-  }
-
   button {
-    margin: 0 auto;
     background-color: #E31B6D;
     color: #FFF;
     border: none;

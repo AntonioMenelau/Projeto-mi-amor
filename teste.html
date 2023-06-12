@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jogo de Checkbox</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #level {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #checkboxes {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .checkbox {
+            margin-right: 10px;
+        }
+        #message {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo de Checkbox</h1>
+    <div id="level">Nível 1</div>
+    <div id="checkboxes">
+        <input type="checkbox" class="checkbox" value="1"> Opção 1
+        <input type="checkbox" class="checkbox" value="2"> Opção 2
+        <input type="checkbox" class="checkbox" value="3"> Opção 3
+    </div>
+    <button id="nextLevel">Próximo Nível</button>
+    <div id="message"></div>
+
+    <script>
+        $(document).ready(function() {
+            var level = 1;
+            var correctCheckboxes = [1, 2];
+
+            $('#nextLevel').click(function() {
+                var checkedCheckboxes = [];
+                $('.checkbox:checked').each(function() {
+                    checkedCheckboxes.push(parseInt($(this).val()));
+                });
+
+                if (arraysEqual(correctCheckboxes, checkedCheckboxes)) {
+                    level++;
+                    $('#level').text('Nível ' + level);
+                    correctCheckboxes = generateCorrectCheckboxes(level);
+                    $('.checkbox').prop('checked', false);
+                    $('#message').text('Resposta correta! Avançando para o próximo nível...');
+                } else {
+                    $('#message').text('Resposta incorreta! Tente novamente.');
+                }
+            });
+
+            function generateCorrectCheckboxes(level) {
+                var checkboxes = [];
+                for (var i = 1; i <= level + 1; i++) {
+                    checkboxes.push(i);
+                }
+                return checkboxes;
+            }
+
+            function arraysEqual(a, b) {
+                if (a === b) return true;
+                if (a == null || b == null) return false;
+                if (a.length !== b.length) return false;
+                for (var i = 0; i < a.length; ++i) {
+                    if (a[i] !== b[i]) return false;
+                }
+                return true;
+            }
+        });
+    </script>
+</body>
+</html>

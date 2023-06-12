@@ -2,6 +2,7 @@ body {
     background-color: #FCEFF5;
     background-image: url('coracao.svg');
     background-repeat: repeat;
+    background-position: center center;
     background-size: cover;
   }
   
@@ -12,6 +13,14 @@ body {
     height: 100vh;
   }
   
+  h2 {
+    color: #E31B6D;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
   h1 {
     color: #E31B6D;
     font-family: 'Arial', sans-serif;
